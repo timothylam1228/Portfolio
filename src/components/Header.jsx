@@ -1,7 +1,7 @@
 // Create Header component
 import React from 'react';
 import { useState, useEffect } from 'react';
-
+import Link from './buttons/Link';
 const Header = () => {
 
     // if mobile device, display hamburger menu
@@ -31,18 +31,24 @@ const Header = () => {
             name: 'Skills',
             link: '#skills'
         },
-        {
-            name: 'Blog',
-            link: '#blog'
-        },
+
         {
             name: 'Careers',
             link: '#careers'
         },
         {
+            name: 'Education',
+            link: '#education'
+        },
+        {
+            name: 'Projects',
+            link: '#projects'
+        },
+        {
             name: 'Contact',
             link: '#contact'
         },
+
     ]
 
     // scroll into view
@@ -54,20 +60,21 @@ const Header = () => {
 
     return (
         <header
-            className={`flex-col lg:fixed transition-all ease-in-out duration-500 w-full  ${scrollPosition === 0 ? "lg:py-[10px] border-0 shadow-lg" : "border-b-gray-500 "
+            className={`flex-col lg:fixed transition-all ease-in-out duration-500 w-full  ${scrollPosition === 0 ? "lg:py-[4px] border-0 shadow-lg" : "border-b-gray-500 "
                 } flex top-0 z-100`}
         >
-            <div className='font-mono py-4 w-full flex justify-end' >
+            <div className='font-mono py-4 w-full flex justify-end px-12' >
                 {items.map((item, index) => (
                     <div
                         key={index}
-                        className='text-grey-800 text-base mx-4 hover:text-grey-600 cursor-pointer'
-                        onClick={(e)=>handleScrollToView(e,item.link)}
+                        className='text-grey-800 flex items-center text-base hover:text-grey-600 cursor-pointer transition-colors duration-500 hover:bg-gray-200 px-4'
+                        onClick={(e) => handleScrollToView(e, item.link)}
                     >
                         {item.name}
                     </div>
                 ))
                 }
+                <Link link="./resume.pdf" name="Resume" className={"border-2 rounded-xl px-4 py-2 cursor-pointer transition-colors duration-500 hover:bg-gray-200"} />
             </div>
         </header >
     )

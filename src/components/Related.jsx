@@ -1,6 +1,8 @@
 import Resume from './buttons/Link';
 import Link from './buttons/Link';
 import github_icon from '../assets/github_icon.png';
+import Github from '../assets/skills/github.svg'
+import Linkedin from '../assets/skills/linkedin.svg'
 import linkedin_icon from '../assets/linkedin_icon.png';
 const Related = () => {
 
@@ -12,18 +14,13 @@ const Related = () => {
         {
             name: 'Github',
             link: github,
-            icon: github_icon
+            icon: Github
         },
         {
             name: 'LinkedIn',
             link: linkedin,
-            icon: linkedin_icon
+            icon: Linkedin
         },
-        {
-            name: 'Resume',
-            link: resume,
-            icon: ''
-        }
     ]
 
     return (
@@ -32,10 +29,8 @@ const Related = () => {
                 {items.map((item, index) => (
                     <Link
                         key={index}
-                        name={item.name}
                         link={item.link}
                         icon={item.icon}
-                        style='w-1/3'
                     />
                 ))
                 }

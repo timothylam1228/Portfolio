@@ -2,9 +2,10 @@
 // Import React
 import React from 'react';
 // Import the hero image
-// Create the Hero banner component
+import Contact from './Contact';
 import Related from './Related';
 import Container from './Container';
+import Animation from './Animation';
 const Hero = () => {
     // Generate a breif description of myself
 
@@ -13,21 +14,26 @@ const Hero = () => {
     // Generate a button that links to my resume
 
     const MyName = "Timothy Lam"
-    const welcomeSentence = `Hello, I'm ${MyName}`
-    const description = "I'm a web developer with a passion for creating beautiful and functional websites."
+    const welcomeSentence = `${MyName}`
+    const description = "I'm a website and mobile app developer with a passion for creating beautiful and functional websites and mobile app."
 
 
     return (
         <Container>
-            <div className='bg-white flex h-screen items-center justify-center'>
-                <div className='flex flex-col'>
-                    <div className='font-sans text-5xl'>
-                        {welcomeSentence}
+            <div className='flex flex-col md:flex-row'>
+                <div className='flex h-screen items-center justify-center'>
+                    <div className='flex flex-col '>
+                        <div className='font-sans  text-5xl'>
+                            {welcomeSentence}
+                        </div>
+                        <div className='flex mt-12 mb-6'>
+                            {description}
+                        </div>
+                        <Related />
                     </div>
-                    <div>
-                        {description}
-                    </div>
-                    <Related />
+                </div>
+                <div className='w-full'>
+                    <Animation />
                 </div>
             </div>
         </Container>
