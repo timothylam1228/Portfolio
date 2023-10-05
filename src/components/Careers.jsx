@@ -17,7 +17,7 @@ function JobEntry(props) {
     const experience = props.experience;
 
     return (
-        <div className="job-entry p-4">
+        <div className="job-entry p-4 flex w-full flex-col">
             <h3 className="text-2xl font-bold">{experience.title}</h3>
             <p> {experience.startDate} - {experience.endDate}</p>
             <p className="text-gray-600">{experience.company}．{experience.location}</p>
@@ -25,14 +25,14 @@ function JobEntry(props) {
                 {experience.highlights.map((highlight, index) => (
                     <li key={index} className="text-gray-700">
                         {highlight.split().map((text, index) => (
-                            <Description>
+                            <Description key={`${text}-${index}`}>
                                 {text}
                             </Description>
                         ))}
                     </li>
                 ))}
             </ul>
-            <div className='flex gap-2'>
+            <div className='flex gap-2 flex-wrap'>
                 {experience.skills.map((skill, index) => (
                     <Chips title={skill} key={`${skill}-${index}`} className="mt-2 bg-black" textClassName="text-white" />
                 ))}
