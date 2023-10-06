@@ -58,6 +58,51 @@ const Header = () => {
     }
 
 
+    // use hamburger menu for mobile devices
+    // else use full menu
+
+    const [showMenu, setShowMenu] = useState(false)
+
+    const handleShowMenu = () => {
+        setShowMenu(!showMenu)
+    }
+
+    const MobileMenu = () => {
+        return (
+            <div className="flex flex-col text-center">
+                <div>
+                    <div className="flex justify-between items-center  px-12 py-4 cursor-pointer" onClick={handleShowMenu}>
+                        三
+                    </div>
+                </div>
+                <div className={`flex flex-col fixed items-center w-full h-screen pt-12 bg-white gap-6  ${showMenu ? 'flex' : 'hidden'}`}>
+                    {items.map((item, index) => (
+                        <div
+                            key={index}
+                            className='text-grey-800 text-center text-2xl hover:text-grey-600 cursor-pointer transition-colors duration-500 hover:bg-gray-200 px-4'
+                            onClick={(e) => {
+                                handleScrollToView(e, item.link)
+                                handleShowMenu()
+                            }}
+                        >
+                            {item.name}
+                        </div>
+                    ))
+                    }
+                    <Link link="./resume.pdf" name="Resume" className={"border-2 w-1/2 rounded-xl px-4 py-2 cursor-pointer transition-colors duration-500 hover:bg-gray-200"} />
+                    <div onClick={handleShowMenu} className='border-2 px-2 rounded-full border-black cursor-pointer'>X</div>
+                </div>
+            </div>
+        )
+    }
+
+    // if mobile device, display hamburger menu
+    // else display full menu
+
+    if (window.innerWidth <= 800) {
+        return <MobileMenu />
+    }
+
     return (
         <header
             className={`flex-col lg:fixed transition-all ease-in-out duration-500 w-full  ${scrollPosition === 0 ? "lg:py-[4px] border-0 shadow-lg" : "border-b-gray-500 "

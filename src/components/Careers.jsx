@@ -17,7 +17,7 @@ function JobEntry(props) {
     const experience = props.experience;
 
     return (
-        <div className="job-entry p-4 flex w-full flex-col">
+        <div className="job-entry flex w-full flex-col">
             <h3 className="text-2xl font-bold">{experience.title}</h3>
             <p> {experience.startDate} - {experience.endDate}</p>
             <p className="text-gray-600">{experience.company}．{experience.location}</p>

@@ -20,8 +20,8 @@ const Hero = () => {
 
     return (
         <Container>
-            <div className='flex flex-col md:flex-row'>
-                <div className='flex h-screen items-center justify-center'>
+            <div className='flex justify-center  flex-col h-screen md:flex-row'>
+                <div className='flex items-center justify-center'>
                     <div className='flex flex-col '>
                         <div className='font-sans  text-5xl'>
                             {welcomeSentence}
@@ -32,7 +32,7 @@ const Hero = () => {
                         <Related />
                     </div>
                 </div>
-                <div className='w-full'>
+                <div className='w-full hidden md:flex'>
                     <Animation />
                 </div>
             </div>
