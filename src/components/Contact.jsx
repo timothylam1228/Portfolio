@@ -17,8 +17,7 @@ const Contact = () => {
                             {/* <input onChange={setEmail} className="border-b border-gray-500 appearance-none bg-transparent w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Email" aria-label="Email"></input> */}
                         </div>
                         <textarea onChange={(e) => { setMessage(e.target.value) }} id="message" name="message" className=" h-20 border-b border-gray-500 appearance-none bg-transparent w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" placeholder="Message" aria-label="Message" />
-                        <div className="flex justify-end">
-                            <button type="submit" className="mt-12 py-2 w-20 items-end flex justify-center border-2 border-black rounded-3xl hover:border-grey-400 hover:bg-black hover:text-white transition-all duration-300">Submit</button>
+                        <div className="flex justify-end mt-2">
                             <a href={`mailto:timothylam1228@gmail.com?subject=Enquire from ${name}&body=${message}`}>Submit</a>
                         </div>
                     </form>
