@@ -105,7 +105,7 @@ const Header = () => {
 
     return (
         <header
-            className={`flex-col lg:fixed transition-all ease-in-out duration-500 w-full  ${scrollPosition === 0 ? "lg:py-[4px] border-0 shadow-lg" : "border-b-gray-500 "
+            className={`flex-col lg:fixed transition-all ease-in-out duration-500 w-full bg-white  ${scrollPosition === 0 ? "lg:py-[4px] border-0 shadow-lg" : "border-b-gray-500 "
                 } flex top-0 z-100`}
         >
             <div className='font-mono py-4 w-full flex justify-end px-12' >
