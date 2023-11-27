@@ -5,7 +5,7 @@ function WorkExperience(props) {
     const careers = props.careers;
 
     return (
-        <div className="work-experience flex flex-col items-start justify-start text-start">
+        <div className="work-experience mt-2 flex flex-col items-start justify-start text-start">
             {careers.map((experience, index) => (
                 <JobEntry key={index} experience={experience} />
             ))}
@@ -17,13 +17,13 @@ function JobEntry(props) {
     const experience = props.experience;
 
     return (
-        <div className="job-entry flex w-full flex-col">
+        <div className="job-entry flex w-full flex-col mt-4">
             <h3 className="text-2xl font-bold">{experience.title}</h3>
             <p> {experience.startDate} - {experience.endDate}</p>
-            <p className="text-gray-600">{experience.company}．{experience.location}</p>
+            <p className="text-gray-600">{experience.company}</p>
             <ul className="list-disc list-inside">
                 {experience.highlights.map((highlight, index) => (
-                    <li key={index} className="text-gray-700">
+                    <li key={index} className="text-sm md:text-lg  text-gray-700">
                         {highlight.split().map((text, index) => (
                             <Description key={`${text}-${index}`}>
                                 {text}
@@ -32,9 +32,9 @@ function JobEntry(props) {
                     </li>
                 ))}
             </ul>
-            <div className='flex gap-2 flex-wrap'>
+            <div className='flex gap-2 flex-wrap mt-2'>
                 {experience.skills.map((skill, index) => (
-                    <Chips title={skill} key={`${skill}-${index}`} className="mt-2 bg-black" textClassName="text-white" />
+                    <Chips title={skill} key={`${skill}-${index}`} className=" text-sm bg-black" textClassName="text-white" />
                 ))}
             </div>
         </div>
@@ -55,7 +55,7 @@ function Description(props) {
         return (
             <>
                 {words.map((word, index) => (
-                    <span key={index}>
+                    <span key={index} className=' leading-5'>
                         {word}
                         {matches[index] && <span className="font-bold">{matches[index]}</span>}
                     </span>
@@ -69,11 +69,10 @@ function Description(props) {
 
 const careers = [
     {
-        title: "Application Developer",
+        title: "Senior Application Developer",
         startDate: "Jan 2023",
         endDate: "Jul 2023",
         company: "The Club HKT Limited",
-        location: "Hong Kong",
         highlights: [
             "Developed an eCommerce app and website using @Adobe Experience Manager@, @React@, and @React Native@, resulting in increased sales and improved customer satisfaction.",
             "Seamlessly integrated new features with @Restful API@ and @GraphQL@ to enhance data retrieval and updates, providing an efficient user experience.",
@@ -84,11 +83,10 @@ const careers = [
         skills: ['React', 'React Native', 'Adobe Experience Manager', 'GraphQL', 'Restful API', 'Git Flow']
     },
     {
-        title: "Junior Application Developer",
+        title: "Analyst Programmer",
         startDate: "Mar 2022",
         endDate: "Dec 2022",
         company: "Cinchblock",
-        location: "Hong Kong",
         highlights: [
             "Develop and deploy secure and efficient smart contracts using @Solidity@ and @Hardhat@.",
             "Created visually appealing and user-friendly websites and mobile applications with @React@ and @React Native@.",
