@@ -1,6 +1,6 @@
 const SkillContainer = (props) => {
 
-    const { skill, size, name } = props;
+    const { skill, name } = props;
 
     return (
         <div className={`skill-container items-center flex flex-col w-[40px]`}>

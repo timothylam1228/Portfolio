@@ -1,9 +1,6 @@
-import Resume from './buttons/Link';
 import Link from './buttons/Link';
-import github_icon from '../assets/github_icon.png';
 import Github from '../assets/skills/github.svg'
 import Linkedin from '../assets/skills/linkedin.svg'
-import linkedin_icon from '../assets/linkedin_icon.png';
 import Resume_icon from '../assets/resume_icon.png';
 const Related = () => {
 
