@@ -5,7 +5,7 @@ import Resume_icon from '../assets/resume_icon.png';
 const Related = () => {
 
     const github = "https://github.com/timothylam1228"
-    const linkedin = "www.linkedin.com/in/timothy-lam-dev"
+    const linkedin = "https://www.linkedin.com/in/timothy-lam-dev/"
     const resume = "/resume.pdf"
 
     const items = [
